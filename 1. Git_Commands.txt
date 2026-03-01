@@ -88,6 +88,7 @@ In future if the developer makes any changes to the repository and we want to up
        >-<  'git remote add origin https://github.com/Arijit20000/myRepo.git'  ----->  Connects your local repository to a remote GitHub repository named origin(default name for remote repositories).
        >-<  'git branch -M main'  ----->  Renames the current branch to "main" (force rename even if it already exists).
        >-<  'git push -u origin main'  ----->  Uploads your local main branch to GitHub and links it so future pushes can use just git push.
+       >-<  'git push origin branch_name'  ----->  Pushes a specific branch to the remote repository on GitHub. If branch_name is other than main branch then we need to use this command to push that branch to GitHub after after using 17 to swith. Used for seeing the merge network of the branches in GitHub.
        >-<  'git remote' ------>  List the remote repositories connected to your local repository.
        >-<  'git remote -v'  ----->  List the remote repositories along with their URLs, showing both fetch and push URLs for each remote repository.
 ------------------------------------------------------------------------------------------------------------------------------------>
