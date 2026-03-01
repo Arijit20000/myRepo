@@ -52,6 +52,8 @@ In future if the developer makes any changes to the repository and we want to up
 
 17 ==> 'git checkout branch_name'  ----->  Switch to the specified branch.
 
+18 ==> 'git merge branch_name'  ----->  Merge the specified branch into the current branch, combining their changes.
+
 18 ==> >-< 'git diff' ----->  Show the differences between the working directory and the staging area. 
        >-< 'git diff --cached'  ----->  Show the differences between the staging area and the last commit.
 
