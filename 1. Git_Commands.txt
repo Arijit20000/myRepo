@@ -1,0 +1,91 @@
+<<--------------------------------------------------------- (GIT COMMANDS CHEAT SHEET) ------------------------------------------------------------->>
+
+1 ==> 'git --version'  ----->  Check the installed version of Git.
+
+2 ==> 'git config --global user.name your_name'  ----->  Set your Git username.
+      'git config --global user.email your_email'  ----->  Set your Git email.
+------------------------------------------------------------------------------------------------------------------------------------>   
+
+3 ==> 'git config --global --list'  ----->  List all the Git configurations.
+
+4 ==> 'ls'  ----->  List the files in the current directory.
+
+5 ==> 'ls -la'  ----->  List all files, including hidden files, in the current directory with detailed information.
+---------------------------------------------------------------------------------------------------------------------------------->
+
+6 ==> 'git init'  ----->  Initialize a new Git repository in the current directory.
+
+7 ==> 'git add file_name'  ----->  Add specific file to the staging area for the next commit.
+      'git add *'  ----->  Add all files in the current directory to the staging area for the next commit.
+
+8 ==> 'git commit -m "commit_message"'  ----->  Commit the staged changes with a descriptive message.
+
+9 ==> 'git status'  ----->  Check the status of the Git repository, showing changes and untracked files.
+
+10 ==> 'git push'  ----->  Push the committed changes to a remote repository, such as GitHub. This command uploads your local commits to the remote repository, making them available to others who have access to that repository.
+
+11 ==> 'git pull'  ----->  Fetch and merge changes from a remote repository to your local repository. This command is used to update your local repository with the latest changes from the remote repository, ensuring that you have the most recent version of the code before making further changes or commits.
+
+12 ==> 'git clone repository_url'  ----->  Create a local copy of a remote repository. This command is used to download an entire repository from a remote source, such as GitHub, to your local machine, allowing you to work on the code and make changes locally. Note: Profile should be public in order to search and find the profile in users tab of github. After finding the profile we can click on it and then click on repositories tab, then click on the repository we want to clone and then copy the repository_url from <> code HTTPS and then use the above command to clone the repository to our local machine. 
+In future if the developer makes any changes to the repository and we want to update our local copy with those changes then we can use 'git pull' command to fetch and merge those changes to our local repository.
+----------------------------------------------------------------------------------------------------------------------------------->
+
+13 ==> >-< 'git log'  ----->  View the commit history of the repository. Gives us the commit_id.
+       >-< 'git log -p -2'  ----->  View the commit history with detailed differences for the last 2 commits.
+       >-< 'git log --stat'  ----->  View the commit history with a summary of changes for each commit.
+       >-< 'git log --pretty=oneline'  ----->  View the commit history in a compact format, showing only the commit ID and message.
+       >-< 'git log --pretty=format:"%h - %an, %ar : %s"'  ----->  View the commit history with a custom format, showing the abbreviated commit ID, author name, relative date, and commit message.
+       >-< 'git log -S function_name'  ----->  Search for commits that introduced or removed a specific function or keyword in the code. function_name can be in the code like here h1.
+       >-< 'git log --grep=commit_message_keyword'  ----->  Search for commits that contain a specific keyword in their commit message.
+       >-< 'git log --since=date'  ----->  View commits made after a specific date. date can be in the format "YYYY-MM-DD" or "2 weeks ago", etc.
+       >-< 'git log --until=date'  ----->  View commits made before a specific date. date can be in the format "YYYY-MM-DD" or "2 weeks ago", etc.
+       >-< 'git log --author="author_name"'  ----->  View commits made by a specific author. author_name can be the name or email of the author.
+       >-< 'git log --no-merges'  ----->  View the commit history excluding merge commits, showing only regular commits.
+
+
+14 ==> 'git show commit_id: file_name'  ----->  Show the content of a specific file at a particular commit using its commit ID.
+------------------------------------------------------------------------------------------------------------------------------------>
+
+15 ==> -<'git branch'  ----->  List all branches in the repository.
+
+16 ==> 'git branch branch_name'  ----->  Create a new branch with the specified name. * before branch_name indicates that we are currently on that branch.
+
+17 ==> 'git checkout branch_name'  ----->  Switch to the specified branch.
+
+18 ==> >-< 'git diff' ----->  Show the differences between the working directory and the staging area. 
+       >-< 'git diff --cached'  ----->  Show the differences between the staging area and the last commit.
+
+19 ==> >-< 'git checkout commit_id -- file_name'  ----->  Check out a specific version of a file from a particular commit using its commit ID.
+       >-< 'git checkout commit_id -- *'  ----->  Check out all files from a specific commit using its commit ID.
+
+20 ==> >-< 'git checkout branch_name -- file_name'  ----->  Check out a specific version of a file from a particular branch using its branch name.
+       >-< 'git checkout branch_name -- *'  ----->  Check out all files from a specific branch using its branch name. branch_name can be master, main,
+        or any other branch name in the repository.
+------------------------------------------------------------------------------------------------------------------------------------>
+<-------------------------------------------------------- <NEGITIVE CASES> --------------------------------------------------------->
+
+21 ==> If we made any change by mistake and save it then -->
+       >-< 'git restore file_name'  ----->  Restore a specific file to its last committed state, discarding any changes made to it.
+       >-< 'git restore .'  ----->  Restore all files to their last committed state, discarding any changes made to them.
+
+22 ==> If we added the changes using 'git add' then -->
+       >-< 'git restore --staged file_name'  ----->  Unstage a specific file, moving it from the staging area back to the working directory.
+       >-< 'git restore --staged .'  ----->  Unstage all files, moving them from the staging area back to the working directory.
+       After using 17 we can use 16 to restore the files to their last committed state if needed.
+
+23 ==> Added changes to staging area(didn't commit) after this added more changes to file and save then -->
+       >-< 'git restore --worktree file_name'  ----->  Restore a specific file in the working directory to its last committed state, discarding any changes made to it, while keeping the staged changes intact.
+       >-< 'git restore --worktree .'  ----->  Restore all files in the working directory to their last committed state, discarding any changes made to them, while keeping the staged changes intact.
+
+24 ==> If we did commit then -->
+       >-< 'git reset --soft HEAD^'  ----->  Uncommit and keep the changes.
+       >-< 'git reset --hard HEAD^'  ----->  Uncommit, discard, delete the changes and revert back to previous commit so use with caution.
+------------------------------------------------------------------------------------------------------------------------------------>
+
+25 ==> Push an existing repository from the command line to github -->
+       >-<  'git remote add origin https://github.com/Arijit20000/myRepo.git'  ----->  Connects your local repository to a remote GitHub repository named origin(default name for remote repositories).
+       >-<  'git branch -M main'  ----->  Renames the current branch to "main" (force rename even if it already exists).
+       >-<  'git push -u origin main'  ----->  Uploads your local main branch to GitHub and links it so future pushes can use just git push.
+       >-<  'git remote' ------>  List the remote repositories connected to your local repository.
+       >-<  'git remote -v'  ----->  List the remote repositories along with their URLs, showing both fetch and push URLs for each remote repository.
+------------------------------------------------------------------------------------------------------------------------------------>
